@@ -2,6 +2,7 @@
 
 **Configuração:**
 - Estrutura: `meuapp/tests/` com `test_models.py`, `test_views.py`, `test_serializers.py`, etc.
+- Para chamados que envolvem API externa, use sempre o `requests-mock`
 
 **Imports de Factories:**
 ```python
