@@ -1,0 +1,27 @@
+{
+  "name": "@akaytatsu/ia-rules-django-template",
+  "version": "1.0.2",
+  "description": "Um template de regras de IA para projetos Django.",
+  "main": "index.js",
+  "bin": {
+    "ia-rules-django-template": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akaytatsu/ia-rules-django-template.git"
+  },
+  "keywords": [
+    "template",
+    "django",
+    "ia-rules"
+  ],
+  "author": "Thiago Freitas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akaytatsu/ia-rules-django-template/issues"
+  },
+  "homepage": "https://github.com/akaytatsu/ia-rules-django-template#readme"
+}
