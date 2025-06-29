@@ -1,40 +1,40 @@
 #!/usr/bin/env node
 
+const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
 
-const templateDir = path.join(__dirname);
-const projectDir = process.cwd();
+const templates = fs.readdirSync(path.join(__dirname)).filter(file => 
+  fs.lstatSync(path.join(__dirname, file)).isDirectory() && file.startsWith('template-')
+);
 
-const filesToCopy = [
-  'GEMINI.md',
-  '.roo'
-];
+inquirer
+  .prompt([
+    {
+      type: 'list',
+      name: 'template',
+      message: 'Qual template você gostaria de usar?',
+      choices: templates,
+    },
+  ])
+  .then(answers => {
+    const templateDir = path.join(__dirname, answers.template);
+    const projectDir = process.cwd();
 
-filesToCopy.forEach(file => {
-  const source = path.join(templateDir, file);
-  const destination = path.join(projectDir, file);
-
-  if (fs.existsSync(source)) {
-    if (fs.lstatSync(source).isDirectory()) {
-      fs.mkdirSync(destination, { recursive: true });
-      copyDirectory(source, destination);
-    } else {
-      fs.copyFileSync(source, destination);
-    }
-    console.log(`Copiado: ${file}`);
-  } else {
-    console.error(`Arquivo não encontrado: ${file}`);
-  }
-});
+    copyDirectory(templateDir, projectDir);
+    console.log(`Template '${answers.template}' copiado com sucesso!`);
+  });
 
 function copyDirectory(source, destination) {
+  if (!fs.existsSync(destination)) {
+    fs.mkdirSync(destination, { recursive: true });
+  }
+
   fs.readdirSync(source).forEach(item => {
     const sourcePath = path.join(source, item);
     const destinationPath = path.join(destination, item);
 
     if (fs.lstatSync(sourcePath).isDirectory()) {
-      fs.mkdirSync(destinationPath, { recursive: true });
       copyDirectory(sourcePath, destinationPath);
     } else {
       fs.copyFileSync(sourcePath, destinationPath);

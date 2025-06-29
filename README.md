@@ -1,26 +1,33 @@
 # @akaytatsu/ia-rules-django-template
 
-Este repositório é um template para projetos Django, fornecendo um conjunto de regras e configurações para integração com IA, especificamente através do Gemini. Ele automatiza a configuração inicial, copiando os arquivos `GEMINI.md` e o diretório `.roo` para o seu projeto.
+Este repositório oferece uma coleção de templates para iniciar rapidamente seus projetos com configurações e regras de IA pré-definidas, especialmente para integração com o Gemini.
 
 ## Uso
 
-Para utilizar este template, navegue até o diretório raiz do seu projeto e execute o seguinte comando no seu terminal:
+Para utilizar um dos templates, navegue até o diretório raiz do seu projeto e execute o seguinte comando no seu terminal:
 
 ```bash
 npx @akaytatsu/ia-rules-django-template
 ```
 
-Alternativamente, você pode executar diretamente do repositório GitHub:
+Você será solicitado a escolher um dos templates disponíveis (por exemplo, `template-django` ou `template-golang`).
+
+Alternativamente, você pode executar diretamente do repositório GitHub (note que a seleção interativa pode não funcionar em todos os terminais):
 
 ```bash
 npx https://github.com/akaytatsu/ia-rules-django-template.git
 ```
 
-Após a execução, o arquivo `GEMINI.md` e a pasta `.roo` serão adicionados ao seu diretório atual.
+Após a seleção, os arquivos do template escolhido (como `GEMINI.md` e a pasta `.roo`) serão adicionados ao seu diretório atual.
+
+## Templates Disponíveis
+
+*   **template-django**: Um template para projetos Django com regras de IA.
+*   **template-golang**: Um template para projetos Go com regras de IA.
 
 ## Objetivo
 
-O objetivo deste template é padronizar o início de projetos Django que utilizam as diretrizes de IA definidas, garantindo consistência e acelerando o processo de setup inicial.
+O objetivo deste projeto é padronizar e acelerar o setup inicial de projetos que utilizam diretrizes de IA, garantindo consistência através de templates reutilizáveis.
 
 ## Licença
 

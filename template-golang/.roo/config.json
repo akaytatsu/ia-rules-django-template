@@ -1,0 +1,18 @@
+{
+    "autoApproveExecute": true,
+    "allowedCommandPrefixes": [
+        "make up",
+        "make stop",
+        "make test",
+        "make test *",
+        "make flake8",
+        "make migrate",
+        "make migrate *",
+        "make makemigrations",
+        "make makemigrations *"
+    ],
+    "requireApprovalFor": [
+        "make createsuperuser",
+        "docker-compose down"
+    ]
+}

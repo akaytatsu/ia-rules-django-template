@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/akaytatsu/ia-rules-django-template/issues"
   },
-  "homepage": "https://github.com/akaytatsu/ia-rules-django-template#readme"
+  "homepage": "https://github.com/akaytatsu/ia-rules-django-template#readme",
+  "dependencies": {
+    "inquirer": "^12.6.3"
+  }
 }
