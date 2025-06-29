@@ -1,29 +1,30 @@
 #!/usr/bin/env node
 
-const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
 
-const templates = fs.readdirSync(path.join(__dirname)).filter(file => 
-  fs.lstatSync(path.join(__dirname, file)).isDirectory() && file.startsWith('template-')
-);
+async function run() {
+  const { default: inquirer } = await import('inquirer');
 
-inquirer
-  .prompt([
+  const templates = fs.readdirSync(path.join(__dirname)).filter(file => 
+    fs.lstatSync(path.join(__dirname, file)).isDirectory() && file.startsWith('template-')
+  );
+
+  const answers = await inquirer.prompt([
     {
       type: 'list',
       name: 'template',
       message: 'Qual template você gostaria de usar?',
       choices: templates,
     },
-  ])
-  .then(answers => {
-    const templateDir = path.join(__dirname, answers.template);
-    const projectDir = process.cwd();
+  ]);
 
-    copyDirectory(templateDir, projectDir);
-    console.log(`Template '${answers.template}' copiado com sucesso!`);
-  });
+  const templateDir = path.join(__dirname, answers.template);
+  const projectDir = process.cwd();
+
+  copyDirectory(templateDir, projectDir);
+  console.log(`Template '${answers.template}' copiado com sucesso!`);
+}
 
 function copyDirectory(source, destination) {
   if (!fs.existsSync(destination)) {
@@ -41,3 +42,5 @@ function copyDirectory(source, destination) {
     }
   });
 }
+
+run().catch(console.error);
