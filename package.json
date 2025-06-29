@@ -1,29 +1,31 @@
 {
-  "name": "@akaytatsu/ia-rules-django-template",
-  "version": "1.0.2",
-  "description": "Um template de regras de IA para projetos Django.",
+  "name": "@akaytatsu/ia-rules-templates",
+  "version": "1.1.0",
+  "description": "Um inicializador de templates para projetos com regras de IA.",
   "main": "index.js",
   "bin": {
-    "ia-rules-django-template": "./index.js"
+    "ia-rules-templates": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akaytatsu/ia-rules-django-template.git"
+    "url": "git+https://github.com/akaytatsu/ia-rules-templates.git"
   },
   "keywords": [
     "template",
+    "scaffolder",
+    "ia-rules",
     "django",
-    "ia-rules"
+    "golang"
   ],
   "author": "Thiago Freitas",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/akaytatsu/ia-rules-django-template/issues"
+    "url": "https://github.com/akaytatsu/ia-rules-templates/issues"
   },
-  "homepage": "https://github.com/akaytatsu/ia-rules-django-template#readme",
+  "homepage": "https://github.com/akaytatsu/ia-rules-templates#readme",
   "dependencies": {
     "inquirer": "^12.6.3"
   }
