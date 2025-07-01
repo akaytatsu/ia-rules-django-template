@@ -1,4 +1,4 @@
-# Regras do Projeto (GEMINI)
+# Regras do Projeto
 
 Este arquivo centraliza todas as regras e boas práticas para o desenvolvimento do projeto, unificando as diretrizes de diferentes áreas.
 
